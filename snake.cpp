@@ -13,7 +13,32 @@ void *input_thread_work(void *arg)
     struct Snake *snake = (struct Snake *)arg;
     while (true)
     {
-        enum Direction direction = get_input();
+        char input = get_input();
+
+        enum Direction direction=East;
+
+        switch (input)
+        {
+        case 'h':
+            snake->helpmode=!snake->helpmode;
+        case 'a':
+            direction = West;
+            break;
+        case 'w':
+            direction = North;
+            break;
+        case 'd':
+            direction = East;
+            break;
+        case 's':
+            direction = South;
+            break;
+        default:
+            direction = Error;
+            cout << "Incorrect button clicked(" << input << ")" << endl;
+            break;
+        }
+
         snake->update_next_direction(direction);
     }
 }
@@ -24,6 +49,7 @@ Snake::Snake(void)
     next_direction = direction;
     food_eaten = false;
     is_dead = false;
+    helpmode=true;
     length = INITIAL_SNAKE_LENGTH;
     clear_snake_world();
     initialize_snake();

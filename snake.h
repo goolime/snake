@@ -24,6 +24,7 @@ public:
   void set_snake_food(pair<int, int> snake_food);
   bool food_eaten;
   bool is_dead;
+  bool helpmode;
   int length;
 
 private:

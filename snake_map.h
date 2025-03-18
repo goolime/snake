@@ -14,8 +14,11 @@ public:
   void update_score();
 
 private:
+  void paveway(pair<int,int> location, Direction dir);
+  void calcdist();
   char map_array[MAP_HEIGHT][MAP_WIDTH];
   Snake *snake;
+  int waymap[MAP_HEIGHT][MAP_WIDTH];
 };
 
 void clear_map(char map_array[MAP_HEIGHT][MAP_WIDTH]);

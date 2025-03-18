@@ -4,6 +4,8 @@
 #define MAP_WIDTH 20
 #define MAP_HEIGHT 20
 #define MAP_CHAR '.'
+#define MAP_ROAD_CHAR_VER '-'
+#define MAP_ROAD_CHAR_HOR '|'
 #define MAP_END 30
 #define SNAKE_CHAR 'O'
 #define SNAKE_HEAD_WEST '>'

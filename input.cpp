@@ -23,30 +23,11 @@ void input_enter_on()
     tcsetattr(STDIN_FILENO, TCSANOW, &t);
 }
 
-enum Direction get_input()
+char get_input()
 {
-    enum Direction result = East;
+    
     char user_input = getchar();
-    switch (user_input)
-    {
-    case 'a':
-        result = West;
-        break;
-    case 'w':
-        result = North;
-        break;
-    case 'd':
-        result = East;
-        break;
-    case 's':
-        result = South;
-        break;
-    default:
-        result = Error;
-        cout << "Incorrect button clicked(" << user_input << ")" << endl;
-        break;
-    }
-    return result;
+    return user_input;
 }
 
 void input_init()
